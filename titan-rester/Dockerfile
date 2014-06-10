@@ -2,12 +2,12 @@ FROM jamesdbloom/docker-java7-maven
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN git clone https://github.com/sahardge/cassandra.git
-RUN cd cassandra && bash titan1.sh
-RUN mkdir /mountedvol
+#Install Titan + Rexster
+RUN git clone https://github.com/sahardge/Titan-Rexster.git
+RUN cd Titan-Rexster && bash install-titan.sh
 
-# Deploy startup script
-#ADD start.sh /usr/sbin
+#Make Persisted volume
+RUN mkdir /mountedvol
 
 
 WORKDIR /rexster
