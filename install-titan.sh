@@ -1,6 +1,6 @@
 # Argument is the version to install, or default value
 VERSION=${1:-'0.4.4'}
-IP=`hostname --ip-address`
+IP=`/usr/bin/etcdctl get /rexsterIP`
 BACKEND=cassandra #"cassandra" includes rextser, cassandra, and all other backend/indexing support
 TITAN=titan-${BACKEND}-${VERSION}
 REXSTERHOME=/rexster
