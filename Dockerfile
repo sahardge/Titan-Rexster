@@ -10,7 +10,6 @@ RUN curl -s https://storage.googleapis.com/golang/go1.2.2.src.tar.gz | tar -v -C
 RUN cd /usr/local/go/src && ./make.bash --no-clean 2>&1
 ENV PATH /usr/local/go/bin:$PATH
 RUN cd Titan-Rexster && bash install-titan.sh 
-ADD start.sh /rexster
 
 #Make Persisted volume
 RUN mkdir /mountedvol
