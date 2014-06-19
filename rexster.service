@@ -1,0 +1,15 @@
+[Unit]
+Description=Rexster Server
+After=etcd.service
+After=docker.service
+
+
+[Service]
+TimeoutStartSec=0
+EnvironmentFile=/etc/environment
+RemainAfterExit=yes
+ExecStartPre= /usr/bin/etcdctl set /rexsterIP "$COREOS_PUBLIC_IPV4"
+ExecStartPre= /usr/bin/docker pull sahardge/Titan-Rexster
+ExecStart= /bin/bash -c "/usr/bin/docker start %n || \
+           /usr/bin/docker run -d --name %n -p 8182:8182 sahardge/rexster ./bin/rexster.sh --start"
+ExecStop= /usr/bin/docker stop -t 3 %n
