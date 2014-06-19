@@ -16,6 +16,7 @@ cd ${REXSTERHOME}
 cp bin/rexster.sh bin/rexster.sh.orig
 sudo bash -c 'cat bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xms128m -Xmx2048m -XX:MaxPermSize=256m/" > bin/rexster.sh'
 sudo chmod a+x bin/rexster.sh
+mv /local/git/Titan-Rexster/start.sh /rexster
 
 # Install [Titan](http://thinkaurelius.github.io/titan/)
 
