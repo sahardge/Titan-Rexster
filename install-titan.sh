@@ -1,6 +1,6 @@
 # Argument is the version to install, or default value
 VERSION=${1:-'0.4.4'}
-IP=`/usr/bin/etcdctl get /rexsterIP`
+
 BACKEND=cassandra #"cassandra" includes rextser, cassandra, and all other backend/indexing support
 TITAN=titan-${BACKEND}-${VERSION}
 REXSTERHOME=/rexster
@@ -12,8 +12,6 @@ mv /tmp/rexster/rexster-server-2.5.0/ /rexster
 cd /rexster
 mkdir -p ${REXSTERHOME}/ext/titan
 cd ${REXSTERHOME}
-mv config/rexster.xml config/rexster.xml.orig
-cat config/rexster.xml.orig | sed -e "/<base-uri>/s/localhost/""$IP""/" > config/rexster.xml
 #bump rexster heap size
 cp bin/rexster.sh bin/rexster.sh.orig
 sudo bash -c 'cat bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xms128m -Xmx2048m -XX:MaxPermSize=256m/" > bin/rexster.sh'
