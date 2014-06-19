@@ -1,6 +1,7 @@
 [Unit]
 Description=Rexster Server
 After=etcd.service
+Requires=docker.service
 After=docker.service
 
 
