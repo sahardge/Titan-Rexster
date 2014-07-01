@@ -1,5 +1,5 @@
 [Unit]
-Description=Rexster Server
+Description=Rexster + Titan Server
 After=etcd.service
 Requires=docker.service
 After=docker.service
