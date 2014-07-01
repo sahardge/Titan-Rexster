@@ -10,7 +10,10 @@ TimeoutStartSec=0
 EnvironmentFile=/etc/environment
 RemainAfterExit=yes
 ExecStartPre= /usr/bin/etcdctl set /rexsterIP "$COREOS_PUBLIC_IPV4"
-ExecStartPre= /usr/bin/docker pull sahardge/titan-rexster
-ExecStart= /bin/bash -c "/usr/bin/docker start %n || \
-           /usr/bin/docker run -d --name %n -p 8182:8182 sahardge/titan-rexster bash start.sh"
-ExecStop= /usr/bin/docker stop -t 3 %n
+ExecStartPre= /usr/bin/docker pull 160.91.76.121:5000/titan-rexster
+ExecStart= /bin/bash -c "/usr/bin/docker start %p || \
+           /usr/bin/docker run -d --name %p -p 8182:8182 160.91.76.121:5000/titan-rexster bash start.sh"
+ExecStop= /usr/bin/docker stop -t 3 %p
+
+[X-Conflicts]
+X-ConditionMachineID=446c4007417941e2a3fedbafb43bebfe
