@@ -17,4 +17,5 @@ ExecStop= /bin/bash -c '/usr/bin/docker stop -t 3 %p; \
            /usr/bin/docker rm %p '
 
 [X-Fleet]
+# This pushes to the W3 core machine
 X-ConditionMachineID=446c4007417941e2a3fedbafb43bebfe
