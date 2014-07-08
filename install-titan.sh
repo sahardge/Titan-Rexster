@@ -13,3 +13,6 @@ echo "Installing Titan ${VERSION}..."
   unzip -qo ${FILE}
   rm -f ${FILE}
   echo "Titan has been installed."
+  cd ${TITAN}
+  cp -r /local/git/Titan-Rexster/lib pwd
+fi
