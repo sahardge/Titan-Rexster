@@ -17,4 +17,4 @@ echo "Installing Titan ${VERSION}..."
   ###
   ###
   ##
-  cp -r /local/git/Titan-Rexster/lib lib/
+  cp -r /local/git/Titan-Rexster/lib lib
