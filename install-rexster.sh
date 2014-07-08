@@ -19,3 +19,4 @@ sudo bash -c 'cat bin/rexster.sh.orig | sed -e "/-server/s/-Xms128m -Xmx512m/-Xm
 sudo chmod a+x bin/rexster.sh
 mv /local/git/Titan-Rexster/start.sh /rexster
 cp -r /local/git/Titan-Rexster/lib ${REXSTERHOME}/ext/titan
+rm ${REXSTERHOME}/lib/lucene-core-3.6.2.jar
