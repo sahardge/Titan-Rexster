@@ -17,4 +17,3 @@ echo "Installing Titan ${VERSION}..."
   ###
   ### 
   ##
-cp -r /local/git/Titan-Rexster/lib /var
