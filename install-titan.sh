@@ -13,7 +13,3 @@ echo "Installing Titan ${VERSION}..."
   unzip -qo ${FILE}
   rm -f ${FILE}
   echo "Titan has been installed."
-  cd ${TITAN}
-  ###
-  ### 
-  ##
