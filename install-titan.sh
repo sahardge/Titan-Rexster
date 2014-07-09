@@ -14,5 +14,5 @@ echo "Installing Titan ${VERSION}..."
   rm -f ${FILE}
   echo "Titan has been installed."
   cd ${TITAN}
-  cp -r /local/git/Titan-Rexster/lib pwd
+  cp -r /local/git/Titan-Rexster/lib lib/
 fi
