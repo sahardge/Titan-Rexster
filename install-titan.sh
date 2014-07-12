@@ -15,4 +15,6 @@ echo "Installing Titan ${VERSION}..."
   echo "Titan has been installed."
   cd /usr/local/
   cp -r /local/git/Titan-Rexster/lib ${TITAN}/
+  cp -r /local/git/Titan-Rexster/conf ${TITAN}/
+  cp /local/git/Titan-Rexster/start-titan.groovy ${TITAN}/
 fi
